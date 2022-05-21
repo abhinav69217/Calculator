@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="D:\Calculator\favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="D:\Calculator\favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="D:\Calculator\favicon.ico">
+    <link rel="manifest" href="D:\Calculator\favicon.ico>
+    <link rel="mask-icon" href="D:\Calculator\favicon.ico" color="#5bbad5">
+
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+i{
+    color: white;
+}
+h1{
+    text-align: center;
+}
+.row input{
+    margin: 0;
+    padding: 11px;
+    border: solid rgb(220, 221, 245) 2px;
+    border-radius: 9px;
+    font-size: 20px;
+}
+.row{
+    padding: 8px;
+}
+.container{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.button{
+    padding: 20px ;
+    width: 65px;
+    height: 65px;
+    margin: 0px 3px;
+    border: solid 2px black;
+    border-radius: 50%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 24px;
+    color: white; background-color:grey;
+    
+}
+/* The device with borders */
+.smartphone {
+  position: relative;
+  width: 320px;
+  height: 580px;
+  margin: auto;
+  border: 14px black solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.smartphone:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.smartphone:after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The screen (or content) of the device */
+.smartphone .content {
+  width: 320px;
+  height: 580px;
+  background: white;
+}
+</style>
+</head>
+<body>
+
+<div class="smartphone" style="background-color: rgb(25, 10, 10);">
+  <div class="content" style="color: white; background-color: rgb(25, 10, 10);">
+    <h1>Calculator <i class="fa-solid fa-calculator"></i></h1>
+     <div class="container">
+         <div class="row">
+             <input type="text" class="input">
+         </div>
+         <br>
+         <div class="row">
+             <button class="button">C</button>
+             <button class="button">M+</button>
+             <button class="button">M-</button>
+             <button class="button" style="background-color:#F69906;">/</button>
+         </div>
+         <div class="row">
+             <button class="button"><i class="fa-solid fa-7"></i></button>
+             <button class="button"><i class="fa-solid fa-8"></i></button>
+             <button class="button"><i class="fa-solid fa-9"></i></button>
+             <button class="button" style="background-color:#F69906;">*</button>
+         </div>
+         <div class="row">
+             <button class="button"><i class="fa-solid fa-4"></i></button>
+             <button class="button"><i class="fa-solid fa-5"></i></button>
+             <button class="button"><i class="fa-solid fa-6"></i></button>
+             <button class="button" style="background-color:#F69906;">-</button>
+         </div>
+         <div class="row">
+             <button class="button"><i class="fa-solid fa">1</i></button>
+             <button class="button"><i class="fa-solid fa-2"></i></button>
+             <button class="button"><i class="fa-solid fa-3"></i></button>
+             <button class="button" style="background-color:#F69906;">+</button>
+         </div>
+         <div class="row">
+             <button class="button"><i class="fa-solid fa-0"></i></button>
+             <button class="button">.</button>
+             <button class="button">=</button>
+             <button class="button" style="background-color:#F69906;">%</button>
+         </div>
+     </div><br><br>
+    </div>
+</div>
+<br>
+<div class="thanks" style="text-align: center;">
+    Made With ❤️ by Abhinav®️
+</div>
+<script>
+    let string = "";
+let buttons = document.querySelectorAll(".button");
+Array.from(buttons).forEach((i) => {
+  button.addEventListener("click", (e) => {
+    if (e.target.innerHTML == "=") {
+      string = eval(string);
+      document.querySelector("input").value = string;
+    } 
+    else if (e.target.innerHTML == "C") {
+      string = "";
+      document.querySelector("input").value = string;
+    } 
+    else {
+      console.log(e.target);
+      string = string + e.target.innerHTML;
+      document.querySelector("input").value = string;
+    }
+  });
+}); 
+
+</script>
+</body>
+</html>
